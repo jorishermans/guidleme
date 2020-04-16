@@ -10,7 +10,7 @@ import { signInWithBlockstack } from '../composition/sign-in-with-blockstack.fun
 
 export default {
   name: 'SignInBlockstack',
-  setup(props, context) {
+  setup() {
     const signInFn = signInWithBlockstack()
 
     return {
