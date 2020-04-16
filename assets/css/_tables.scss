@@ -1,0 +1,21 @@
+tr {
+  &.line {
+    border-top-color: rgba(0,0,0,.12);
+    border-top-width: 1px;
+    border-top-style: solid;
+  }
+  &.clickable {
+    &:hover {
+      background-color: rgba(0,0,0,.04);
+    }
+  }
+  .px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .py-2 {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+  }
+}
