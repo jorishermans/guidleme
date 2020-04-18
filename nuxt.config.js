@@ -1,5 +1,4 @@
 const path = require('path');
-const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 
 module.exports = {
   mode: 'universal',
@@ -71,6 +70,7 @@ module.exports = {
     },
     extend (config, { isClient }) {
       // Extend only webpack config for client-bundle
+      const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
       if (isClient) {
         // const webpack = require('webpack');
         config.plugins.push(
