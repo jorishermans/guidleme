@@ -50,7 +50,7 @@ import CodeEditor from '../../../components/common/CodeEditor.vue';
 import { inject, onMounted, reactive, computed, watch, ref } from '@vue/composition-api';
 import { Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
-import SimpleCrypto from "simple-crypto-js";
+import SimpleCrypto from 'simple-crypto-js';
 
 interface TextAndCodeStep {
     code: string;
