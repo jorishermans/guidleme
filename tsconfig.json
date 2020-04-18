@@ -6,8 +6,12 @@
       "lib": [
         "esnext",
         "esnext.asynciterable",
-        "dom"
+        "dom",
+        "dom.iterable",
+        "scripthost"
       ],
+      "importHelpers": true,
+      "allowSyntheticDefaultImports": true,
       "esModuleInterop": true,
       "allowJs": true,
       "sourceMap": true,
