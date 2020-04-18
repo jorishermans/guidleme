@@ -859,6 +859,11 @@
     use-events "^1.4.1"
     use-onclickoutside "^0.3.1"
 
+"@ckeditor/ckeditor5-build-inline@^18.0.0":
+  version "18.0.0"
+  resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-build-inline/-/ckeditor5-build-inline-18.0.0.tgz#b5561975fbf84774c454bb4e50969f87007cc6e8"
+  integrity sha512-95ibetASRmpOgG8o0bC4H2PFq4sgcBfnSOj5uQ/riAZ3yET8geIW1j2VWQnMCqg2yQGkp9XelhnTSvEcd7iZqg==
+
 "@ckeditor/ckeditor5-vue@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@ckeditor/ckeditor5-vue/-/ckeditor5-vue-1.0.1.tgz#cddb99609f61b647214b704656c08a15b6a53865"
@@ -1731,7 +1736,7 @@
   dependencies:
     "@babel/types" "^7.3.0"
 
-"@types/bn.js@*", "@types/bn.js@^4.11.5":
+"@types/bn.js@*", "@types/bn.js@^4.11.5", "@types/bn.js@^4.11.6":
   version "4.11.6"
   resolved "https://registry.yarnpkg.com/@types/bn.js/-/bn.js-4.11.6.tgz#c306c70d9358aaea33cd4eda092a742b9505967c"
   integrity sha512-pqr857jrp2kPuO9uRjZ3PwnJTjoQy+fcdxvBTvHm6dkmEL9q+hDD/2j/0ELOBPtPnS8LjCX0gI9nbl8lVkadpg==

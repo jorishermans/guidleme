@@ -108,7 +108,7 @@ export default {
       const state = reactive({
         isLoading: false,
         isStarted: false,
-        tutorial: null,
+        tutorial: {title: '', description: '', author: '', steps: []},
         consumer: {},
         userName: '',
         id: '',

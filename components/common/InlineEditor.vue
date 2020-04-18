@@ -24,8 +24,7 @@ export default Vue.extend({
   name: 'InlineEditor',
   props: ['value'],
   setup: (props, { emit }) => {
-      //const InlineEditor = require( '@ckeditor/ckeditor5-build-inline' );
-      const InlineEditor = {};
+      const InlineEditor = require( '@ckeditor/ckeditor5-build-inline' );
       const editor = InlineEditor;
       const editorConfig = {};
       const editorElement = ref({});
