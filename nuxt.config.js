@@ -63,10 +63,7 @@ module.exports = {
   build: {
     extractCSS: true,
     postcss: {
-      autoprefixer: {},
-      plugins: {
-        tailwindcss: path.resolve(__dirname, './tailwind.config.js')
-      }
+      autoprefixer: {}
     },
     extend (config, { isClient }) {
       // Extend only webpack config for client-bundle
