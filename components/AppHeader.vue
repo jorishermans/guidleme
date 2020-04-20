@@ -4,7 +4,7 @@
       <div class="container">
         <div class="navbar-brand">
           <router-link to="/"
-            ><img class="logo" src="/assets/img/logo.png" alt="guidle me"
+            ><img class="logo" src="/img/logo.png" alt="guidle me"
           /></router-link>
         </div>
 
