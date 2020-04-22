@@ -16,19 +16,20 @@
         </div>
       </section>
       <section class="section">
-        <div>
-          <b-input placeholder="Title" v-model="state.title"></b-input>
+        <div class="add-new">
+          <div>
+            <b-input placeholder="Title" v-model="state.title"></b-input>
+          </div>
+          <br />
+          <div class="add-edit-tutorial">
+            <client-only placeholder="Loading inline editor ...">
+              <inline-editor
+                v-model="state.editorData"
+              ></inline-editor>
+            </client-only>
+          </div>
+          <b-button type="is-primary" @click="create(state.title, state.editorData)">Save</b-button>
         </div>
-        <br /><br />
-        <div class="add-edit-tutorial">
-          <client-only placeholder="Loading inline editor ...">
-            <inline-editor
-              v-model="state.editorData"
-            ></inline-editor>
-          </client-only>
-        </div>
-        <br /><br />
-        <b-button type="is-primary" @click="create(state.title, state.editorData)">Save</b-button>
       </section>
     </div>
   </div>
@@ -113,5 +114,17 @@ export default {
     border: 1px solid rgba(0, 0, 0, 0.15) !important;
     min-height: 200px;
   }
+}
+.add-new {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px none #000;
+    border-radius: 4px 4px 4px 4px;
+    border: 1px solid #f0f0f0;
+    background-color: #fff;
+    box-shadow: 0 12px 18px 0 rgba(120, 93, 153, 0.1);
 }
 </style>
