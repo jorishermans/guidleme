@@ -1,7 +1,7 @@
 <template>
   <div>
       <section class="section" v-if="state.isLoading">
-          <div class="container"><img class="loading-card" src="/assets/img/loading.svg" alt="loading guidle me"
+          <div class="container"><img class="loading-card" src="/img/loading.svg" alt="loading guidle me"
           /></div>
       </section>
       <section class="section top" v-if="!state.isLoading">
