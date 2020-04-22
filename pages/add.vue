@@ -116,8 +116,6 @@ export default {
   }
 }
 .add-new {
-    display: flex;
-    justify-content: flex-start;
     position: relative;
     align-items: center;
     padding: 15px;
