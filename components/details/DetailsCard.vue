@@ -69,7 +69,7 @@ export default {
   components: {
       TutorialStep, StartTutorial,
   },
-  head() {
+  /* head() {
         const self: any = this;
         // console.log((self.state.tutorial as Tutr).title)
         if (self.state.tutorial) {
@@ -96,7 +96,7 @@ export default {
           return {}
         }
 
-  },
+  }, **/
   setup: (props :any, context: any) => {
       const tutorialApi: TutorialsService | void = inject<TutorialsService>(TutorialsSymbol);
       const blockStackApi: BlockStackApiService | void = inject<BlockStackApiService>(BlockStackSymbol);
@@ -159,7 +159,7 @@ export default {
           if (!serverPrefetch) {
               await fetchData(props.id);
 
-              context.root.$meta().refresh();
+              // context.root.$meta().refresh();
           }
       });
 

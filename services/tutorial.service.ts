@@ -92,8 +92,8 @@ export class TutorialsService {
         const options :any =  {username: profileName, zoneFileLookupURL: 'https://core.blockstack.org/v1/names/',
         decrypt: false};
         options.app = 'https://app.guidle.me';
-        return this.getTutrByPath(path, options
-           );
+        console.log(JSON.stringify(options.app))
+        return this.getTutrByPath(path, options);
     }
 
     public async deleteTutr(id: string) {
