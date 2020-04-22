@@ -144,6 +144,7 @@ export default {
             }
             state.shareUrl = `https://app.guidle.me/p/${userData ? profile : author}/${props.id}`;
             state.isLoading = false;
+            console.log('the end is here ...');
           }
       }
 

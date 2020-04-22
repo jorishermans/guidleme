@@ -88,12 +88,17 @@ export class TutorialsService {
     }
 
     public async getTutrByProfileName(profileName: string, id: string) {
-        const path = `tutr-${id}.json`;
-        const options :any =  {username: profileName, zoneFileLookupURL: 'https://core.blockstack.org/v1/names/',
-        decrypt: false};
-        options.app = 'https://app.guidle.me';
-        console.log(JSON.stringify(options.app))
-        return this.getTutrByPath(path, options);
+        try {
+          const path = `tutr-${id}.json`;
+          const options :any =  {username: profileName, zoneFileLookupURL: 'https://core.blockstack.org/v1/names/',
+          decrypt: false};
+          options.app = 'https://app.guidle.me';
+          return this.getTutrByPath(path, options);
+        } catch (err) {
+          console.warn(err);
+          return { title: 'This tutorial is not retrievable anymore', description: 'It can be that the author has done something with this tutorial', steps: []}
+        }
+
     }
 
     public async deleteTutr(id: string) {
