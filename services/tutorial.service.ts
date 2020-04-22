@@ -91,7 +91,7 @@ export class TutorialsService {
         const path = `tutr-${id}.json`;
         const options :any =  {username: profileName, zoneFileLookupURL: 'https://core.blockstack.org/v1/names/',
         decrypt: false};
-        if(process.server) { options.app = 'https://app.guidle.me'; }
+        options.app = 'https://app.guidle.me';
         return this.getTutrByPath(path, options
            );
     }
