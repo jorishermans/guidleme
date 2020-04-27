@@ -21,7 +21,7 @@
     "@nuxtjs/now-builder": "^0.17.1",
     "@nuxtjs/pwa": "^3.0.0-0",
     "@nuxtjs/style-resources": "^1.0.0",
-    "@storagestack/blockstack-provider": "^0.6.3",
+    "@storagestack/blockstack-provider": "^0.6.4",
     "@storagestack/core": "^0.6.0",
     "@storagestack/indexer-middleware": "^0.6.0",
     "@storagestack/json-middleware": "^0.6.1",
