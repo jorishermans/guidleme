@@ -26,10 +26,10 @@ export class BlockStackApiService {
             let userData = this.userSession.loadUserData();
             const person = new Person(userData.profile);
             const username = userData.username;
-            console.log(userData, person.givenName);
+            // console.log(userData, person.givenName);
             this.user = { person, username };
           }
-          console.log('finished', this.signInNotify, this.signInNotify.length);
+          // console.log('finished', this.signInNotify, this.signInNotify.length);
           this.signInNotify.forEach(fn => {
             fn();
           })
