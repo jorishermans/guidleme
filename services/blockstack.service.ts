@@ -11,7 +11,7 @@ export class BlockStackApiService {
     private signInNotify: Function[];
 
     constructor() {
-        const appConfig = new AppConfig()
+        const appConfig = new AppConfig(['store_write', 'publish_data'])
         this.userSession = new UserSession({ appConfig: appConfig });
         this.signInNotify = [];
 
