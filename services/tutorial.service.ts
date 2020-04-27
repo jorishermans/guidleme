@@ -1,6 +1,7 @@
 import { IndexerMiddleware, HashTableIndex } from './indexer.middleware';
 import { Observable, ReplaySubject } from 'rxjs';
 import { ss } from '@storagestack/core';
+import { onBeforeMount } from '@vue/composition-api';
 
 export interface TutrSum {
    lastUpdated: Date;
@@ -93,10 +94,13 @@ export class TutorialsService {
           const options :any =  {username: profileName, zoneFileLookupURL: 'https://core.blockstack.org/v1/names/',
           decrypt: false};
           options.app = 'https://app.guidle.me';
-          return this.getTutrByPath(path, options);
+          return this.getTutrByPath(path, options).catch(err => {
+            console.warn('catched error when retrieving tutorial', err);
+            return { title: 'This tutorial is not retrievable anymore', description: 'It can be that the author has done something with this tutorial', steps: []};
+          });
         } catch (err) {
           console.warn(err);
-          return { title: 'This tutorial is not retrievable anymore', description: 'It can be that the author has done something with this tutorial', steps: []}
+          return
         }
 
     }
