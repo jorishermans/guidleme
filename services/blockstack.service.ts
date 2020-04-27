@@ -38,6 +38,7 @@ export class BlockStackApiService {
           name: 'Guidle Me',
           icon: 'https://app.guidle.me/img/icons/favicon.png',
         },
+        userSession: this.userSession
       }
     }
 
