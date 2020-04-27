@@ -1561,7 +1561,7 @@
     mustache "^2.3.0"
     stack-trace "0.0.10"
 
-"@storagestack/blockstack-provider@^0.6.4":
+"@storagestack/blockstack-provider@^0.6.2":
   version "0.6.4"
   resolved "https://registry.yarnpkg.com/@storagestack/blockstack-provider/-/blockstack-provider-0.6.4.tgz#6a12e332e7c5a11de5bbeed538840c8d953ea82d"
   integrity sha512-t9WnavTTM7i8Khc1/Jymz+xjqdSTEQHMDlYGV3eISgtYDzJA8rdzFtn+AdkLR1ccNo2Qo/gcSpzyFAjKER2d4w==
