@@ -9,13 +9,15 @@ export class BlockStackApiService {
     private user: {person: Person, username: string} | undefined = undefined;
     private userSession: UserSession;
     private signInNotify: Function[];
+    private blockstackProvider: BlockstackProvider;
 
     constructor() {
         const appConfig = new AppConfig(['store_write', 'publish_data'])
         this.userSession = new UserSession({ appConfig: appConfig });
         this.signInNotify = [];
 
-        ss.registerProvider(new BlockstackProvider(this.userSession));
+        this.blockstackProvider = new BlockstackProvider(this.userSession);
+        ss.registerProvider(this.blockstackProvider);
     }
 
     public getAuthOptions() {
@@ -29,6 +31,7 @@ export class BlockStackApiService {
             // console.log(userData, person.givenName);
             this.user = { person, username };
           }
+          this.blockstackProvider.userSession = u.userSession;
           // console.log('finished', this.signInNotify, this.signInNotify.length);
           this.signInNotify.forEach(fn => {
             fn();
