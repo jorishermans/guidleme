@@ -93,7 +93,7 @@ export class TutorialsService {
           const path = `tutr-${id}.json`;
           const options :any =  {username: profileName, zoneFileLookupURL: 'https://core.blockstack.org/v1/names/',
           decrypt: false};
-          options.app = 'https://app.guidle.me';
+          if (process) { options.app = 'https://app.guidle.me'; }
           return this.getTutrByPath(path, options).catch(err => {
             console.warn('catched error when retrieving tutorial', err);
             return { title: 'This tutorial is not retrievable anymore', description: 'It can be that the author has done something with this tutorial', steps: []};

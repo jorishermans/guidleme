@@ -5,7 +5,7 @@
           /></div>
       </section>
       <section class="section top" v-if="!state.isLoading">
-            <div class="container">
+            <div class="container" v-if="state.tutorial">
             <h1 class="title">
               {{state.tutorial.title}}
               <span @click="edit"><b-icon v-if="state.editable" icon="pencil" type="is-primary"
