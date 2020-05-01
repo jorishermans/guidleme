@@ -82,6 +82,7 @@ module.exports = {
 
   },
   purgeCSS: {
-    mode: 'postcss'
+    mode: 'postcss',
+    enabled: ({ isDev, isClient }) => true,
   }
 }
