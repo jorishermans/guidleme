@@ -152,16 +152,16 @@ export default {
 
       watch<string>(() => props.id as string, async (id: string) => {
           // await fetchData(id);
-          let serverPrefetch = false;
+          /* let serverPrefetch = false;
           onServerPrefetch(async () => {
             serverPrefetch = true;
             await fetchData(props.id);
-          });
-          if (!serverPrefetch) {
+          }); */
+          // if (!serverPrefetch) {
               await fetchData(props.id);
 
               // context.root.$meta().refresh();
-          }
+          //}
           console.log('also here ...');
       });
 
