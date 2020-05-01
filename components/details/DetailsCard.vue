@@ -162,6 +162,7 @@ export default {
 
               // context.root.$meta().refresh();
           }
+          console.log('also here ...');
       });
 
       const edit = () => {
