@@ -6,7 +6,8 @@
       </section>
       <template v-if="!state.isLoading">
         <section class="section top">
-              <div class="container" v-if="state.tutorial">
+          <template v-if="state.tutorial">
+              <div class="container">
               <h1 class="title">
                 {{state.tutorial.title}}
                 <span @click="edit"><b-icon v-if="state.editable" icon="pencil" type="is-primary"
@@ -40,10 +41,12 @@
                         </footer>
                     </div>
               </b-modal>
-              <h2 class="subtitle" v-html="state.tutorial.description" v-if="!state.isStarted"></h2>
-
-              <p v-if="!state.isLocal">By {{state.userName}}</p>
+              <h2 v-if="!state.isStarted" class="subtitle" v-html="state.tutorial.description"></h2>
+              <template v-if="!state.isLocal">
+                  <p>By {{state.userName}}</p>
+              </template>
               </div>
+          </template>
         </section>
       </template>
       <start-tutorial v-if="!state.isLoading && !state.isStarted" v-on:start="start"></start-tutorial>
