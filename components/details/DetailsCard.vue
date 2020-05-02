@@ -126,11 +126,9 @@ export default {
             state.isLocal = profile ? false : true;
             state.isStarted = props.editable as boolean;
             let userData;
-            console.log('has profile? ' + profile);
             if (!profile) {
               state.tutorial = await tutorialApi.getTutr(id);
 
-              console.log(state.tutorial, author);
               if (state.tutorial) { state.tutorial.author = author; }
             } else if (blockStackApi) {
               userData = await blockStackApi.lookupProfile(profile);
