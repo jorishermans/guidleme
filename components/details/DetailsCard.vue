@@ -4,46 +4,48 @@
           <div class="container"><img class="loading-card" src="/img/loading.svg" alt="loading guidle me"
           /></div>
       </section>
-      <section class="section top" v-if="!state.isLoading">
-            <div class="container" v-if="state.tutorial">
-            <h1 class="title">
-              {{state.tutorial.title}}
-              <span @click="edit"><b-icon v-if="state.editable" icon="pencil" type="is-primary"
-                class="action"></b-icon></span>
-              <b-tooltip v-if="state.isStarted"
-                :label="state.tutorial.description | stripHtml"
-                position="is-bottom"
-                multilined>
-                  <b-icon icon="alert-circle" type="is-primary" class="action"></b-icon>
-              </b-tooltip>
-              <b-tooltip
-                label="share this tutorial"
-                position="is-bottom"
-                multilined>
-                  <span @click="isSharingActive = true"><b-icon
-                    class="action" type="is-primary" icon="share"></b-icon></span>
-              </b-tooltip>
+      <template v-if="!state.isLoading">
+        <section class="section top">
+              <div class="container" v-if="state.tutorial">
+              <h1 class="title">
+                {{state.tutorial.title}}
+                <span @click="edit"><b-icon v-if="state.editable" icon="pencil" type="is-primary"
+                  class="action"></b-icon></span>
+                <b-tooltip v-if="state.isStarted"
+                  :label="state.tutorial.description | stripHtml"
+                  position="is-bottom"
+                  multilined>
+                    <b-icon icon="alert-circle" type="is-primary" class="action"></b-icon>
+                </b-tooltip>
+                <b-tooltip
+                  label="share this tutorial"
+                  position="is-bottom"
+                  multilined>
+                    <span @click="isSharingActive = true"><b-icon
+                      class="action" type="is-primary" icon="share"></b-icon></span>
+                </b-tooltip>
 
-            </h1>
+              </h1>
 
-            <b-modal :active.sync="isSharingActive" has-modal-card :width="800">
-                  <div class="modal-card" style="width: auto">
-                      <header class="modal-card-head">
-                          <p class="modal-card-title">Share url</p>
-                      </header>
-                      <section class="modal-card-body">
-                        <b-input v-model="state.shareUrl" class="shareUrl" />
-                      </section>
-                      <footer class="modal-card-foot">
-                          <button class="button" type="button" @click="isSharingActive = false">Close</button>
-                      </footer>
-                  </div>
-            </b-modal>
-            <h2 class="subtitle" v-html="state.tutorial.description" v-if="!state.isStarted"></h2>
+              <b-modal :active.sync="isSharingActive" has-modal-card :width="800">
+                    <div class="modal-card" style="width: auto">
+                        <header class="modal-card-head">
+                            <p class="modal-card-title">Share url</p>
+                        </header>
+                        <section class="modal-card-body">
+                          <b-input v-model="state.shareUrl" class="shareUrl" />
+                        </section>
+                        <footer class="modal-card-foot">
+                            <button class="button" type="button" @click="isSharingActive = false">Close</button>
+                        </footer>
+                    </div>
+              </b-modal>
+              <h2 class="subtitle" v-html="state.tutorial.description" v-if="!state.isStarted"></h2>
 
-            <p v-if="!state.isLocal">By {{state.userName}}</p>
-            </div>
-      </section>
+              <p v-if="!state.isLocal">By {{state.userName}}</p>
+              </div>
+        </section>
+      </template>
       <start-tutorial v-if="!state.isLoading && !state.isStarted" v-on:start="start"></start-tutorial>
       <tutorial-step v-if="!state.isLoading && state.isStarted" :id="state.id" :tutr="state.tutorial"
                                         :consumer="state.consumer" :editable="state.editable"></tutorial-step>
