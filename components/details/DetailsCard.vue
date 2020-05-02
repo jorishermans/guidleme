@@ -152,14 +152,17 @@ export default {
           }
       }
 
-
+      useFetch(async () => {
+          console.log('use fetch ...');
+          await fetchData(props.id);
+      });
 
       watch<string>(() => props.id as string, async (id: string) => {
-          useFetch(async () => {
-            console.log('use fetch ...');
+          // useFetch(async () => {
+            // console.log('use fetch ...');
             await fetchData(props.id);
-          });
-          console.log('also here ...');
+          // });
+          // console.log('also here ...');
       });
 
       const edit = () => {
