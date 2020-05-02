@@ -152,12 +152,12 @@ export default {
           }
       }
 
-      if (process) {
+      /** if (process) {
         useFetch(async () => {
           console.log('use fetch ...');
           await fetchData(props.id);
         });
-      }
+      }*/
 
       watch<string>(() => props.id as string, async (id: string) => {
           // useFetch(async () => {
