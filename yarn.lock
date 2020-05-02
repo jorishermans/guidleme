@@ -8447,6 +8447,13 @@ nuxt-buefy@^0.3.2:
   dependencies:
     buefy "^0.8.10"
 
+nuxt-composition-api@^0.2.3:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/nuxt-composition-api/-/nuxt-composition-api-0.2.3.tgz#225312f0a6d84dad959180b857e95e2746308d6a"
+  integrity sha512-3wUcsQHGfDunBk7bPMu16mJo6XTOu48c0KER0WAvWsSJE3WN0//SLKkVuhmZzYBk1sep+JoEKEBOToYMjHmAXA==
+  dependencies:
+    "@vue/composition-api" "^0.5.0"
+
 nuxt-purgecss@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/nuxt-purgecss/-/nuxt-purgecss-0.2.1.tgz#5cabb515beaff96cfb833b3ce13caecec953daca"

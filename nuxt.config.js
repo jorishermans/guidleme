@@ -31,14 +31,15 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/composition-api', '~/plugins/inject-combined',
+  plugins: ['~/plugins/inject-combined',
   { src: '~/plugins/cdk-editor', mode: 'client' }],
   /*
    ** Nuxt.js dev-modules
    */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxt/typescript-build'
+    '@nuxt/typescript-build',
+    'nuxt-composition-api'
   ],
   /*
    ** Nuxt.js modules

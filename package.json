@@ -35,11 +35,12 @@
     "express": "^4.16.4",
     "moment": "^2.24.0",
     "monaco-editor-vue": "^1.0.9",
+    "monaco-editor-webpack-plugin": "^1.9.0",
     "nuxt": "^2.0.0",
     "nuxt-buefy": "^0.3.2",
+    "nuxt-composition-api": "^0.2.3",
     "nuxt-purgecss": "^0.2.1",
-    "simple-crypto-js": "^2.2.0",
-    "monaco-editor-webpack-plugin": "^1.9.0"
+    "simple-crypto-js": "^2.2.0"
   },
   "devDependencies": {
     "@nuxt/typescript-build": "^0.5.6",

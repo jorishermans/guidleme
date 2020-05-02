@@ -60,6 +60,7 @@ import { BlockStackApiService, BlockStackSymbol } from '../../services/blockstac
 import { ConsumerService, ConsumerSymbol, Consumer } from '../../services/consumer.service';
 import { formatDate, stripHtml } from '../../filters/';
 import { GetUserName } from '../../composition/get-username.function';
+import { useFetch } from 'nuxt-composition-api'
 
 export default {
   props: ['id', 'profile', 'editable'],
@@ -149,17 +150,10 @@ export default {
 
 
       watch<string>(() => props.id as string, async (id: string) => {
-          // await fetchData(id);
-          /* let serverPrefetch = false;
-          onServerPrefetch(async () => {
-            serverPrefetch = true;
+          useFetch(async () => {
+            console.log('use fetch ...');
             await fetchData(props.id);
-          }); */
-          // if (!serverPrefetch) {
-              await fetchData(props.id);
-
-              // context.root.$meta().refresh();
-          //}
+          });
           console.log('also here ...');
       });
 
