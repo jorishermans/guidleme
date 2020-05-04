@@ -10,21 +10,28 @@
               <div class="container">
               <h1 class="title">
                 {{state.tutorial.title}}
-                <span @click="edit"><b-icon v-if="state.editable" icon="pencil" type="is-primary"
+                <template v-if="state.editable">
+                  <span @click="edit"><b-icon icon="pencil" type="is-primary"
                   class="action"></b-icon></span>
-                <b-tooltip v-if="state.isStarted"
-                  :label="state.tutorial.description | stripHtml"
-                  position="is-bottom"
-                  multilined>
-                    <b-icon icon="alert-circle" type="is-primary" class="action"></b-icon>
-                </b-tooltip>
-                <b-tooltip
-                  label="share this tutorial"
-                  position="is-bottom"
-                  multilined>
-                    <span @click="isSharingActive = true"><b-icon
-                      class="action" type="is-primary" icon="share"></b-icon></span>
-                </b-tooltip>
+                </template>
+                <template v-if="state.isStarted">
+                  <b-tooltip
+                    :label="state.tutorial.description | stripHtml"
+                    position="is-bottom"
+                    multilined>
+                      <b-icon icon="alert-circle" type="is-primary" class="action"></b-icon>
+                  </b-tooltip>
+                </template>
+
+                <template v-if="state.isStarted">
+                  <b-tooltip
+                    label="share this tutorial"
+                    position="is-bottom"
+                    multilined>
+                      <span @click="isSharingActive = true"><b-icon
+                        class="action" type="is-primary" icon="share"></b-icon></span>
+                  </b-tooltip>
+                </template>
 
               </h1>
 
@@ -41,7 +48,9 @@
                         </footer>
                     </div>
               </b-modal>
-              <h2 v-if="!state.isStarted" class="subtitle" v-html="state.tutorial.description"></h2>
+              <template v-if="!state.isStarted">
+                <h2  class="subtitle" v-html="state.tutorial.description"></h2>
+              </template>
               <template v-if="!state.isLocal">
                   <p>By {{state.userName}}</p>
               </template>
@@ -49,9 +58,13 @@
           </template>
         </section>
       </template>
-      <start-tutorial v-if="!state.isLoading && !state.isStarted" v-on:start="start"></start-tutorial>
-      <tutorial-step v-if="!state.isLoading && state.isStarted" :id="state.id" :tutr="state.tutorial"
-                                        :consumer="state.consumer" :editable="state.editable"></tutorial-step>
+      <template v-if="!state.isLoading && !state.isStarted">
+        <start-tutorial v-on:start="start"></start-tutorial>
+      </template>
+      <template v-if="!state.isLoading && state.isStarted">
+        <tutorial-step :id="state.id" :tutr="state.tutorial"
+                                        :consumer="state.consumer" :editable="state.editable"></template>
+      </template>
     </div>
 </template>
 
@@ -160,11 +173,11 @@ export default {
       }*/
 
       watch<string>(() => props.id as string, async (id: string) => {
-          // useFetch(async () => {
+          useFetch(async () => {
             // console.log('use fetch ...');
             await fetchData(props.id);
-          // });
-          // console.log('also here ...');
+          });
+          console.log('also here ...');
       });
 
       const edit = () => {
