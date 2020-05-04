@@ -176,10 +176,10 @@ export default {
       })
 
       watch<string>(() => props.id as string, async (id: string) => {
-          useFetch(async () => {
+          // useFetch(async () => {
             // console.log('use fetch ...');
             await fetchData(props.id);
-          });
+          // });
           console.log('also here ...');
       });
 
