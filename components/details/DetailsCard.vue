@@ -63,7 +63,7 @@
       </template>
       <template v-if="!state.isLoading && state.isStarted">
         <tutorial-step :id="state.id" :tutr="state.tutorial"
-                                        :consumer="state.consumer" :editable="state.editable"></template>
+                                        :consumer="state.consumer" :editable="state.editable"></tutorial-step>
       </template>
     </div>
 </template>
@@ -171,6 +171,9 @@ export default {
           await fetchData(props.id);
         });
       }*/
+      onMounted(() => {
+        console.log('mounting this application ...');
+      })
 
       watch<string>(() => props.id as string, async (id: string) => {
           useFetch(async () => {
