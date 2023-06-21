@@ -36,7 +36,7 @@
     "moment": "^2.24.0",
     "monaco-editor-vue": "^1.0.9",
     "monaco-editor-webpack-plugin": "^1.9.0",
-    "nuxt": "^2.0.0",
+    "nuxt": "^3.4.3",
     "nuxt-buefy": "^0.3.2",
     "nuxt-composition-api": "^0.2.3",
     "nuxt-purgecss": "^0.2.1",
